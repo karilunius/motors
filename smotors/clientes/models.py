@@ -13,3 +13,7 @@ class Clientes(models.Model):
     pais_cliente = models.CharField(max_length=50)
     telefono_cliente = models.IntegerField()
     email_cliente = models.CharField(max_length=50)
+
+
+    def __str__(self):
+        return f'{self.nombre_cliente} {self.apellidos_cliente}'
