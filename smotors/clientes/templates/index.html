@@ -8,11 +8,15 @@
         <table class="table table-success table-striped-columns">
         <!-- <table class="table table-success table-striped-columns" border="1"> -->
                 <thead>
+                        <th>#</th>
+                        <th>DNI</th>
                         <th>Nombre</th>
                         <th>Apellidos</th>
                         <th>Dirección</th>
                         <th>Ciudad</th>
                         <th>Pais</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
                 </thead>
                 <tbody>
                     <!-- <tr></tr>
@@ -22,8 +26,15 @@
                         <tr></tr> -->
                         {% for cliente in clientes %}
                         <tr>
+                            <td>{{cliente.id_cliente}}</td>
+                            <td>{{cliente.cedula_cliente}}</td>
                             <td>{{cliente.nombre_cliente}}</td>
                             <td>{{cliente.apellidos_cliente}}</td>
+                            <td>{{cliente.direccion_cliente}}</td>
+                            <td>{{cliente.ciudad_cliente}}</td>
+                            <td>{{cliente.pais_cliente}}</td>
+                            <td>{{cliente.telefono_cliente}}</td>
+                            <td>{{cliente.email_cliente}}</td>
                         </tr>
                         {% endfor %}
                 </tbody>
