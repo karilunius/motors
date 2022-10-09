@@ -1,11 +1,19 @@
 from django.shortcuts import render, HttpResponse
+
+#from smotors.clientes.formsCliente import ClienteForm
 from .models import Clientes
+
+from .formsCliente import ClienteForm
 # Create your views here.
 #@app.route('/ ')
 
 
 def crearCliente(request) :
-        return render(request, 'crearCliente.html')
+        form = ClienteForm() #se crea un forms
+        contexto = {
+                'form' : form,
+        }
+        return render(request, 'crearCliente.html', contexto)
 
 
 def contactenos(request) :
