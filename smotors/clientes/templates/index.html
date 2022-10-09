@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+
+{% block titulo%}Pagina Principal{%endblock%} 
+
+{% block contenido %}
+
+        <h1>Listado de Clientes</h1>
+
+        <table border="1">
+                <thead>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                </thead>
+                <tbody>
+                    <!-- <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr> -->
+                        {% for cliente in clientes %}
+                        <tr>
+                            <td>{{cliente.nombre_cliente}}</td>
+                            <td>{{cliente.apellidos_cliente}}</td>
+                        </tr>
+                        {% endfor %}
+                </tbody>
+                    
+                    <!-- <p>
+                        {{ clientes }}
+                    </p> -->
+                    
+        </table>
+{% endblock %}
