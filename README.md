@@ -24,3 +24,7 @@ en el request porque motivo , de lo contrario se rechazará.
 
 
 *ESTA CARPETA NO CONTIENE EL LADO FRONTEND - Para esto remitirse a la carpeta : //pendiente
+
+
+*video sobre formas de instalar y trabajar con bootstrap
+https://www.youtube.com/watch?v=rIEoF6B_GNY
