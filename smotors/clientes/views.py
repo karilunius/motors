@@ -12,3 +12,7 @@ def  inicio(request):
         }
         return render(request, 'index.html', contexto)
 #no funciono lo de ver el get 
+
+
+def crearCliente(request) :
+        return render(request, 'crearCliente.html')
