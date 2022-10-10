@@ -6,7 +6,7 @@
 
     <h1>Crear cliente</h1>
     <form action=""    method="post">
-
+        {% csrf_token %}
         <p>{{ form.as_p }}</p>
     
         <!-- DNI <input type="text" name="cedula o DNI">
