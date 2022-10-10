@@ -20,6 +20,7 @@
                         <th>Pais</th>
                         <th>Teléfono</th>
                         <th>Email</th>
+                        <th>Opción</th>
                 </thead>
                 <tbody>
                     <!-- <tr></tr>
@@ -38,6 +39,11 @@
                             <td>{{cliente.pais_cliente}}</td>
                             <td>{{cliente.telefono_cliente}}</td>
                             <td>{{cliente.email_cliente}}</td>
+
+                            <td>
+                                <a href="" class="btn btn-success">Editar</a>
+                                <a href="" class="btn btn-dark">Eliminar</a>
+                            </td>
                         </tr>
                         {% endfor %}
                 </tbody>
