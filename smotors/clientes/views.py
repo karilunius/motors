@@ -65,3 +65,11 @@ def editarCliente(request, id) :
                 'tituloh1' : 'Actualizar Cliente'
         }
         return render(request, 'crearCliente.html', contexto)
+
+
+def  eliminarCliente(request, id) :
+        cliente = Clientes.objects.get(id_cliente=id)
+        cliente.delete()
+        return redirect('clientes')
+
+
