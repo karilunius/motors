@@ -49,7 +49,14 @@ def editarCliente(request, id) :
         # print-('*'*70)-
         
         cliente = Clientes.objects.get(id_cliente = id)   #revisar como se llama en el import 
-
+#aqui se envia los datos de enviar
+        if request.method == 'POST':  #cuando boton guardar
+        # CREA EL FORMULARIO CON LOS DATOS
+                form = ClienteForm(request.POST, instance=cliente)
+                #print (request.POST)
+                if form.is_valid():
+                        form.save() # salva 
+                        return redirect('clientes')  # redirige a la pagina clientes
         form = ClienteForm( instance=cliente)# se le pasa un forms vacio, pero luego se le dice toma los datos
         contexto = {
                 'form' : form,
