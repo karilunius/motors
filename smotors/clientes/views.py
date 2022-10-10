@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 
 #from smotors.clientes.formsCliente import ClienteForm
 from .models import Clientes
@@ -9,7 +9,15 @@ from .formsCliente import ClienteForm
 
 
 def crearCliente(request) :
-        form = ClienteForm() #se crea un forms
+        #aqui se envia los datos de enviar
+        if request.method == 'POST' :
+                form = ClienteForm(request.POST) # CREA EL FORMULARIO CON LOS DATOS
+                #print (request.POST)
+        if form.is_valid() :
+                form.save()
+                return redirect('clientes')#redirige a la pagina clientes
+        else :
+                form = ClienteForm() #se crea un forms
         contexto = {
                 'form' : form,
         }
