@@ -42,7 +42,7 @@
 
                             <td>
                                 <a href="{% url 'editarCliente' cliente.id_cliente %}" class="btn btn-success">Editar</a>
-                                <a href="" class="btn btn-dark">Eliminar</a>
+                                <a href="{% url 'eliminarCliente' cliente.id_cliente %}" class="btn btn-dark">Eliminar</a>
                             </td>
                         </tr>
                         {% endfor %}
