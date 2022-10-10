@@ -69,7 +69,12 @@ def editarCliente(request, id) :
 
 def  eliminarCliente(request, id) :
         cliente = Clientes.objects.get(id_cliente=id)
-        cliente.delete()
-        return redirect('clientes')
-
+        if request.method == 'POST' :
+                cliente.delete()
+                return redirect('clientes')
+        contexto = {
+                'tituloh1' : 'Eliminar Cliente',
+                'nombre_cliente' : cliente.nombre_cliente
+                }
+        return render(request, 'eliminar.html', contexto)
 
