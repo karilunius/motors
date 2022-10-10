@@ -41,3 +41,17 @@ def  clientes(request):
         }
         return render(request, 'clientes.html', contexto)
 #no funciono lo de ver el get  luego de reiniciar sí funcionó
+
+#@app.route('editarCliente/<int:id')
+def editarCliente(request, id) :
+        # print('*'*70)
+        # print(id)
+        # print-('*'*70)-
+        
+        cliente = Clientes.objects.get(id_cliente = id)   #revisar como se llama en el import 
+
+        form = ClienteForm( instance=cliente)# se le pasa un forms vacio, pero luego se le dice toma los datos
+        contexto = {
+                'form' : form,
+        }
+        return render(request, 'crearCliente.html', contexto)
