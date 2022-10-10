@@ -13,9 +13,9 @@ def crearCliente(request) :
         if request.method == 'POST' :
                 form = ClienteForm(request.POST) # CREA EL FORMULARIO CON LOS DATOS
                 #print (request.POST)
-        if form.is_valid() :
-                form.save()
-                return redirect('clientes')#redirige a la pagina clientes
+                if form.is_valid() :
+                        form.save()
+                        return redirect('clientes')#redirige a la pagina clientes
         else :
                 form = ClienteForm() #se crea un forms
         contexto = {
