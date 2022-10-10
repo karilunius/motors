@@ -19,7 +19,9 @@ def crearCliente(request) :
         else :
                 form = ClienteForm() #se crea un forms
         contexto = {
-                'form' : form,
+                'form': form,
+                'tituloh1': 'Crear Cliente'
+
         }
         return render(request, 'crearCliente.html', contexto)
 
@@ -60,5 +62,6 @@ def editarCliente(request, id) :
         form = ClienteForm( instance=cliente)# se le pasa un forms vacio, pero luego se le dice toma los datos
         contexto = {
                 'form' : form,
+                'tituloh1' : 'Actualizar Cliente'
         }
         return render(request, 'crearCliente.html', contexto)
